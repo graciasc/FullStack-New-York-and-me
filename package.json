@@ -5,5 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "scripts": {
+    "server": "node server/"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }
