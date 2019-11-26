@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head lang="en">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  </head>
+
+  <body>
+    <div class="ui form feedback-grid">
+      <div class="field">
+        <form method="post">
+          <label>Name</label>
+          <!-- <textarea rows="1" method="POST"></textarea> -->
+          <input type="text" name="name" placeholder="Enter in Name" id='name-form'  />
+          <label>FeedBack for me</label>
+          <!-- <textarea rows="2" method="POST"></textarea> -->
+          <input type="text"name="feed" placeholder="Feedback on the quality of my site"  />
+          <input type="submit" value="Submit" id='submit-btn' />
+        </form>
+      </div>
+      <div class='ui divider'></div>
+      <div class='button-toggle'>
+      <button class="ui secondary button button-toggle ">
+    <i class="angle double right icon"></i>
+  </button>
+</div>
+    </div>
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+      <a class="item" href="/">
+        <i class="home icon"></i>
+        Home
+      </a>
+      <a class="item" href="/About.html">
+        <i class="block layout icon"></i>
+        About
+      </a>
+      <a class="item" href="/Feedback.html">
+        <i class="smile icon"></i>
+        Feedback
+      </a>
+    </div>
+    
+  </body>
+</html>
+
+<script>
+  $("button").click(function() {
+    $(".ui.sidebar").sidebar("toggle");
+  });
+</script>

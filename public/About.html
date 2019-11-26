@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-
-<html>
-  <head lang="en">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       crossorigin="anonymous"
@@ -12,20 +13,21 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <title>About</title>
   </head>
-
   <body>
-    <div class="ui form">
-      <div class="field">
-        <form method="post">
-          <label>Name</label>
-          <!-- <textarea rows="1" method="POST"></textarea> -->
-          <input type="text" name="name" placeholder="Enter in Name" />
-          <label>FeedBack for me</label>
-          <!-- <textarea rows="2" method="POST"></textarea> -->
-          <input type="text"name="feed" placeholder="Feedback on the quality of my site" />
-          <input type="submit" value="Submit" />
-        </form>
+    <div class="about-grid">
+      <div class="img-card">
+        <img src="./assets/graciasc.jpg" height="auto" width="600px" />
+      </div>
+      <div class='ui divider'></div>
+      <div class=" ui segment about-content">
+        <h1>Content</h1>
+      </div>
+      <div class="button-toggle">
+        <button class="ui secondary button ">
+          <i class="angle double right icon"></i>
+        </button>
       </div>
     </div>
     <div class="ui left demo vertical inverted sidebar labeled icon menu">
@@ -33,19 +35,14 @@
         <i class="home icon"></i>
         Home
       </a>
-      <a class="item" href="/about.html">
+      <a class="item" href="/About.html">
         <i class="block layout icon"></i>
         About
       </a>
-      <a class="item" href="/feedback">
+      <a class="item" href="/Feedback.html">
         <i class="smile icon"></i>
         Feedback
       </a>
-    </div>
-    <div>
-      <button class="ui secondary button ">
-        <i class="angle double right icon"></i>
-      </button>
     </div>
   </body>
 </html>

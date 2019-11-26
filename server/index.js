@@ -31,8 +31,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
-app.use("/", express.static("public")); // serving static files
-app.use("/about.html", express.static("public")); // serving static files
+app.use(express.static("public")); // serving static files
 app.use("/server", (req, res) => {
   // sending server world ---
   res.send("Server World");
@@ -40,17 +39,18 @@ app.use("/server", (req, res) => {
 });
 app.post("/about.html", (req, res) => {
   // beilieve this is saving the body of the post request
-  const myData = new Feed(req.body);
+  // console.log(req.body.name, req.body.feed)
+  // fixed need to pass in the specifically what needs to be saved in the db
+  const myData = new Feed({ name: req.body.name, textInput: req.body.feed });
   myData
     .save()
     .then(item => {
       res.send("item saved to database");
     })
-    .catch(err => {
-      res.status(400).send("unable to save to database");
+    .catch((item, err) => {
+      res.status(400).send(`unable to save to database ${item}`);
     });
   // res.send(`post request for feedback: FeedBack written: ${req.body.feed}`);
-  console.log(req.body.feed, req.body.name);
 });
 app.listen(3000, () => {
   console.log("Server Started....");

@@ -1,5 +1,33 @@
-
 .footer-segment-div {
   display: grid;
   justify-content: center;
+}
+
+.about-grid {
+  display: grid;
+  justify-content: center;
+}
+
+.feedback-grid {
+  display: grid;
+  justify-content: center;
+  padding-top: 24px;
+  /* grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      name
+      feedback; */
+}
+.button-toggle {
+  justify-content: center;
+}
+#name-form {
+  margin-bottom: 16px;
+}
+#submit-btn {
+  margin-top:16px;
+}
+
+.img-card {
+  padding-top: 24px
 }
