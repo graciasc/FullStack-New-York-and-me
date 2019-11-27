@@ -1,15 +1,16 @@
 const express = require("express");
-require('dotenv').config();
+require("dotenv").config();
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-mongoose.connect(
-  process.env.MONGO_URI,
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+// mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true
 
 // .then(() => {
 //   console.log("Connected to Database");
@@ -58,16 +59,16 @@ app.listen(3000, () => {
   console.log("Server Started....");
 });
 
-app.get('/about.html/:feedback', (req, res) => {
+app.get("/about.html/:feedback", (req, res) => {
   //should look for a specific user
-})
+});
 //looks for everyone in the Db
-app.get('/json', (req, res) => {
-  Feed.find({}, (err,data) => {
-    if(err) return console.error(err);
+app.get("/json", (req, res) => {
+  Feed.find({}, (err, data) => {
+    if (err) return console.error(err);
     res.send(data);
-  })
-})
+  });
+});
 module.export = app;
 
 // using ky to call the data
