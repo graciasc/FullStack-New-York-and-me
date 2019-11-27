@@ -52,3 +52,12 @@
     $(".ui.sidebar").sidebar("toggle");
   });
 </script>
+<script>
+  const ky = require("ky")(async () => {
+    const parsed = await ky
+      .post("http://localhost:3000/json", { json: { foo: true } })
+      .json();
+    console.log(parsed);
+    //=> `{data: '🦄'}`
+  })();
+</script>
