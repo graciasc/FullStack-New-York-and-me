@@ -55,4 +55,15 @@ app.post("/about.html", (req, res) => {
 app.listen(3000, () => {
   console.log("Server Started....");
 });
+
+app.get('/about.html/:feedback', (req, res) => {
+  //should look for a specific user
+})
+//looks for everyone in the Db
+app.get('/json', (req, res) => {
+  Feed.find({}, (err,data) => {
+    if(err) return console.error(err);
+    res.send(res.json(data));
+  })
+})
 module.export = app;

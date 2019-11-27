@@ -12,11 +12,11 @@
   display: grid;
   justify-content: center;
   padding-top: 24px;
-  /* grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-      name
-      feedback; */
+
+}
+.main-grid {
+  display: grid;
+    justify-content: center;
 }
 .button-toggle {
   justify-content: center;
