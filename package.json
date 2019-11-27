@@ -13,7 +13,7 @@
     "node-fetch": "^2.6.0"
   },
   "scripts": {
-    "server": "yarn && node server/"
+    "server": "yarn && node server/",
     "build": "node server/",
   },
   "devDependencies": {
