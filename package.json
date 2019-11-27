@@ -11,7 +11,8 @@
     "mongoose": "^5.7.12"
   },
   "scripts": {
-    "build": "node server/"
+    "start": "node server/",
+    "build": "node public/",
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
