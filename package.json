@@ -13,7 +13,7 @@
     "node-fetch": "^2.6.0"
   },
   "scripts": {
-    "server": "node server/"
+    "server": "yarn && node server/"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
