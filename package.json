@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "node server/",
-    "build": "node public/",
+    "build": "node public/"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
