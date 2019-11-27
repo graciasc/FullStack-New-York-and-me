@@ -17,9 +17,11 @@
   <body>
     <div>
       <div class="ui main-grid raised ">
-        <div class="ui bottom attached">
+        <div class="ui bottom attached" id="image-holder">
           <img
             class="ui image picture-card segment"
+            onClick="handleImageChange()"
+            id="image"
             src="./assets/oliver-niblett-newyork.jpg"
             height="auto"
             width="1250px "
@@ -51,10 +53,30 @@
 </html>
 
 <script>
-  $("button").click(function() {
-    $(".ui.sidebar").sidebar("toggle");
+  $('button').click(function() {
+    $('.ui.sidebar').sidebar('toggle');
   });
-  const image = document.querySelector('img').addEventListener('click', () => {
-    
-  })
+  //gets random place in array
+  let pictures = [
+    'alex-azabache-VQqyf1yOSlQ-unsplash.jpg',
+    'adam-krowitz-389725-unsplash.jpg',
+    'alexandra-marcu-1562611-unsplash.jpg',
+    'andre-benz-683117-unsplash.jpg',
+    'andreas-ronningen-37802-unsplash.jpg',
+    'annie-spratt-1075893-unsplash.jpg',
+    'annie-spratt-1109639-unsplash.jpg',
+    'malte-schmidt-474904-unsplash.jpg',
+    'rich-hay-1074141-unsplash.jpg',
+    'zach-miles-Y84-eo8drzk-unsplash.jpg',
+    'sam-butler-HXDyJuaTmA0-unsplash.jpg',
+    'robert-bye-WTPp4wgourk-unsplash.jpg',
+    'benjamin-gremler-qONhYBVNz1c-unsplash.jpg',
+    'ian-dooley-dcqMsxhU4zo-unsplash.jpg',
+    'oliver-niblett-newyork.jpg'
+  ];
+
+  function handleImageChange() {
+    let randEl = pictures[Math.floor(Math.random() * pictures.length)];
+    document.getElementById('image').src = `./assets/${randEl}`;
+  }
 </script>

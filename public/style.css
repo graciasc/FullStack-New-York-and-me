@@ -1,43 +1,54 @@
 .footer-segment-div {
-  display: grid;
-  justify-content: center;
+    display: grid;
+    justify-content: center;
 }
 
 .about-grid {
-  display: grid;
-  justify-content: center;
+    display: grid;
+    justify-content: center;
 }
 
 .feedback-grid {
-  display: grid;
-  justify-content: center;
-  padding-top: 24px;
+    display: grid;
+    justify-content: center;
+    padding-top: 24px;
 
 }
+
 .main-grid {
-  display: grid;
+    display: grid;
     justify-content: center;
 }
+
 .button-toggle {
-  justify-content: center;
+    justify-content: center;
 }
+
 #name-form {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
 }
+
 #submit-btn {
-  margin-top:16px;
+    margin-top: 16px;
 }
 
 .img-card {
-  padding-top: 24px
+    padding-top: 24px
 }
+
 .header-title {
-padding-bottom: 16px;
+    padding-bottom: 16px;
 }
+
 .message-content {
-  padding-bottom:24px;
-  font:caption;
+    padding-bottom: 24px;
+    font: caption;
 }
-/* .name-header {
-  padding
-} */
+
+.about-content {
+    width: 500px;
+}
+
+#github {
+    color: teal;
+}
