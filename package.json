@@ -14,6 +14,7 @@
   },
   "scripts": {
     "server": "yarn && node server/"
+    "build": "node server/",
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
