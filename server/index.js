@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 mongoose.connect(
-  process.env.MONGO_URI,
+ 'mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true',
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
