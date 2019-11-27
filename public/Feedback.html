@@ -65,17 +65,17 @@
 </html>
 
 <script>
-  $("button").click(function() {
-    $(".ui.sidebar").sidebar("toggle");
+  $('button').click(function() {
+    $('.ui.sidebar').sidebar('toggle');
   });
 
   const returnedData = async () => {
-    const response = await fetch("http://localhost:3000/json");
+    const response = await fetch('http://localhost:3000/json');
     const data = await response.json();
     console.log(data);
-    const feedback_content_div = document.getElementById("feedback-content");
+    const feedback_content_div = document.getElementById('feedback-content');
     data.map(data => {
-      let div = document.createElement("div");
+      let div = document.createElement('div');
       div.innerHTML = `<h3> ${data.name} </h3> <p class='message-content'> ${data.textInput} </p>`;
 
       feedback_content_div.appendChild(div);
