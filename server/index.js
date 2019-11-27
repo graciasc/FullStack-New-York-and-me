@@ -1,13 +1,17 @@
 const express = require("express");
+require('dotenv').config();
 const app = express();
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
 mongoose.connect(
-  "mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true",
+  process.env.MONGO_URI,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
+// mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true
+console.log(process.env.MONGO_URI)
 
 // .then(() => {
 //   console.log("Connected to Database");
@@ -37,7 +41,7 @@ app.use("/server", (req, res) => {
   res.send("Server World");
   //   res.writeHead(200);
 });
-app.post("/about.html", (req, res) => {
+app.post("/Feedback.html", (req, res) => {
   // beilieve this is saving the body of the post request
   // console.log(req.body.name, req.body.feed)
   // fixed need to pass in the specifically what needs to be saved in the db
@@ -63,7 +67,16 @@ app.get('/about.html/:feedback', (req, res) => {
 app.get('/json', (req, res) => {
   Feed.find({}, (err,data) => {
     if(err) return console.error(err);
-    res.send(res.json(data));
+    res.send(data);
   })
 })
 module.export = app;
+
+// using ky to call the data
+//   const ky = require("ky")(async () => {
+//   const parsed = await ky
+//     .post("http://localhost:3000/json", { json: { foo: true } })
+//     .json();
+//   console.log(parsed);
+//   //=> `{data: '🦄'}`
+// })();

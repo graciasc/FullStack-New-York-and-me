@@ -20,7 +20,7 @@
       <div class="img-card">
         <img src="./assets/graciasc.jpg" height="auto" width="600px" />
       </div>
-      <div class='ui divider'></div>
+      <div class="ui divider"></div>
       <div class=" ui segment about-content">
         <h1>Content</h1>
       </div>
@@ -51,13 +51,4 @@
   $("button").click(function() {
     $(".ui.sidebar").sidebar("toggle");
   });
-</script>
-<script>
-  const ky = require("ky")(async () => {
-    const parsed = await ky
-      .post("http://localhost:3000/json", { json: { foo: true } })
-      .json();
-    console.log(parsed);
-    //=> `{data: '🦄'}`
-  })();
 </script>

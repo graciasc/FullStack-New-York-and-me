@@ -20,20 +20,32 @@
         <form method="post">
           <label>Name</label>
           <!-- <textarea rows="1" method="POST"></textarea> -->
-          <input type="text" name="name" placeholder="Enter in Name" id='name-form'  />
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter in Name"
+            id="name-form"
+          />
           <label>FeedBack for me</label>
           <!-- <textarea rows="2" method="POST"></textarea> -->
-          <input type="text"name="feed" placeholder="Feedback on the quality of my site"  />
-          <input type="submit" value="Submit" id='submit-btn' />
+          <input
+            type="text"
+            name="feed"
+            placeholder="Feedback on the quality of my site"
+          />
+          <input type="submit" value="Submit" id="submit-btn" />
         </form>
       </div>
-      <div class='ui divider'></div>
-      <div class='button-toggle'>
-      <button class="ui secondary button button-toggle ">
-    <i class="angle double right icon"></i>
-  </button>
-  <div class='feedback-content'></div>
-</div>
+      <div class="ui divider"></div>
+      <div class="button-toggle">
+        <button class="ui secondary button button-toggle ">
+          <i class="angle double right icon"></i>
+        </button>
+
+        <div id="feedback-content" class="ui message">
+          <div class="header header-title"><h1>Feedback:</h1></div>
+        </div>
+      </div>
     </div>
     <div class="ui left demo vertical inverted sidebar labeled icon menu">
       <a class="item" href="/">
@@ -49,7 +61,6 @@
         Feedback
       </a>
     </div>
-    
   </body>
 </html>
 
@@ -57,5 +68,19 @@
   $("button").click(function() {
     $(".ui.sidebar").sidebar("toggle");
   });
-</script>
 
+  const returnedData = async () => {
+    const response = await fetch("http://localhost:3000/json");
+    const data = await response.json();
+    console.log(data);
+    const feedback_content_div = document.getElementById("feedback-content");
+    data.map(data => {
+      let div = document.createElement("div");
+      div.innerHTML = `<h3> ${data.name} </h3> <p class='message-content'> ${data.textInput} </p>`;
+
+      feedback_content_div.appendChild(div);
+    });
+  };
+
+  returnedData();
+</script>

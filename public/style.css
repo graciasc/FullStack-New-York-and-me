@@ -31,3 +31,13 @@
 .img-card {
   padding-top: 24px
 }
+.header-title {
+padding-bottom: 16px;
+}
+.message-content {
+  padding-bottom:24px;
+  font:caption;
+}
+/* .name-header {
+  padding
+} */
