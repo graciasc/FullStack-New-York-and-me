@@ -5,9 +5,9 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const uri = mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true
 mongoose.connect(
- 'mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true',
+   uri,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
