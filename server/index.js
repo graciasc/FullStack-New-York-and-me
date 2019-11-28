@@ -1,4 +1,5 @@
 const express = require("express");
+const port = process.env.PORT || 3000;
 require("dotenv").config();
 const app = express();
 const path = require("path");
@@ -55,7 +56,7 @@ app.post("/Feedback.html", (req, res) => {
     });
   // res.send(`post request for feedback: FeedBack written: ${req.body.feed}`);
 });
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server Started....");
 });
 
