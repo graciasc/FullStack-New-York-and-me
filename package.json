@@ -16,7 +16,7 @@
   },
   "scripts": {
     "server": "node server/",
-    "build": "now public/index.html && node server/ "
+    "build": "node server/ "
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
