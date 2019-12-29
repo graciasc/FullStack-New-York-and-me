@@ -15,8 +15,7 @@
     "serve-static": "^1.14.1"
   },
   "scripts": {
-    "server": "node server/",
-    "build": "node server/ "
+    "start": "node server/",
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
