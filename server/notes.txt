@@ -1,0 +1,23 @@
+Comments Potentially useful in other situations
+
+// mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true
+
+// .then(() => {
+//   console.log("Connected to Database");
+//   }).catch((err) => {
+//       console.log("Not Connected to Database ERROR! ", err);
+//   });
+// console.log(process.env.MONGO_URI)
+
+//created a nenw schema for a person
+
+
+
+// using ky to call the data
+//   const ky = require("ky")(async () => {
+//   const parsed = await ky
+//     .post("http://localhost:3000/json", { json: { foo: true } })
+//     .json();
+//   console.log(parsed);
+//   //=> `{data: '🦄'}`
+// })();
