@@ -26,7 +26,19 @@ app.use(
     extended: true
   })
 );
-app.use(express.static("public")); // serving static files
+app.use(express.static("public"));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
+  // authorized headers for preflight requests
+  // https://developer.mozilla.org/en-US/docs/Glossary/preflight_request
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+// serving static files
 app.use("/server", (req, res) => {
   // sending server world ---
   res.send("Server World");
@@ -61,4 +73,3 @@ app.get("/json", (req, res) => {
     res.send(data);
   });
 });
-
