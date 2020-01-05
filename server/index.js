@@ -29,7 +29,6 @@ app.use(
 app.use(express.static("public"));
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
-
   // authorized headers for preflight requests
   // https://developer.mozilla.org/en-US/docs/Glossary/preflight_request
   res.header(
@@ -44,7 +43,7 @@ app.use("/server", (req, res) => {
   res.send("Server World");
   //   res.writeHead(200);
 });
-app.post("/Feedback.html", (req, res) => {
+app.post("/Feedback.html", (req, res, next) => {
   // This is saving the body of the post request
   // console.log(req.body.name, req.body.feed)
   // fixed need to pass in the specifically what needs to be saved in the db
@@ -52,7 +51,7 @@ app.post("/Feedback.html", (req, res) => {
   myData
     .save()
     .then(item => {
-      res.send("item saved to database");
+      res.send("item saved to database. Go back to App");
     })
     .catch((item, err) => {
       res.status(400).send(`unable to save to database ${item}`);
@@ -66,6 +65,7 @@ app.listen(port, () => {
 app.get("/about.html/:feedback", (req, res) => {
   //should look for a specific user
 });
+
 //looks for everyone in the Db
 app.get("/json", (req, res) => {
   Feed.find({}, (err, data) => {
