@@ -6,6 +6,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const cors = require("cors");
 
 mongoose.connect(
   "mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true",
