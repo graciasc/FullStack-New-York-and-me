@@ -68,7 +68,7 @@ app.get("/about.html/:feedback", (req, res) => {
 });
 
 //looks for everyone in the Db
-app.get("/json", (req, res) => {
+app.get("/json", cors(), (req, res) => {
   Feed.find({}, (err, data) => {
     if (err) return console.error(err);
     res.send(data);
