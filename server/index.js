@@ -29,15 +29,6 @@ app.use(
 );
 app.use(express.static("public"));
 app.use(cors());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  // authorized headers for preflight requests
-  // https://developer.mozilla.org/en-US/docs/Glossary/preflight_request
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-});
 // serving static files
 app.use("/server", (req, res) => {
   // sending server world ---
@@ -68,7 +59,7 @@ app.get("/about.html/:feedback", (req, res) => {
 });
 
 //looks for everyone in the Db
-app.get("/json", cors(), (req, res) => {
+app.get("/json", (req, res) => {
   Feed.find({}, (err, data) => {
     if (err) return console.error(err);
     res.send(data);
