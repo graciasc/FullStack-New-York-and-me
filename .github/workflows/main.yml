@@ -15,5 +15,7 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+      env:
+        MONGO_URI: mongodb+srv://gman:1@learning-cluster-jurht.mongodb.net/test?retryWrites=true 
     - name: action-yarn
       uses: comchangs/action-yarn@v0.1-beta
